@@ -1,0 +1,12 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <div class="content">
+
+        <div class=""w-richtext body-copy">
+        {{ page.content }}
+        </div>
+
+		{% include "forms/form.html.twig" %}
+	</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if pagination|length > 1 %}
+    {% if pagination.hasNext %}
+        {% set url =  (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+        <div class="button-wrapper">
+            <a href="{{ url }}" class="w-button button">More posts&nbsp;→</a>
+        </div>
+    {% endif %}
+{% endif %}
