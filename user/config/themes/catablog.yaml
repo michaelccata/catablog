@@ -1,0 +1,7 @@
+enabled: true
+facebook: 'https://www.facebook.com'
+twitter: 'https://www.twitter.com'
+email: 'user@domain.com'
+github: 'https://www.github.com'
+phone: '(0123)-456-7890'
+linkedin: 'https://www.linkedin.com/'

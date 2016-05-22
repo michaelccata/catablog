@@ -1,0 +1,59 @@
+{% macro loop(page) %}
+    {% for p in page.children.visible %}
+        <a href="{{ p.url }}" class="w-nav-link nav-link">
+            {{ p.menu }}
+        </a>
+    {% endfor %}
+{% endmacro %}
+<div class="sidebar-column">
+    <div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation-bar">
+        <div class="w-container"><a href="{{ base_url == '' ? '/' : base_url }}" class="w-nav-brand logo-link"><h1 class="logo-text">{{ site.title }}</h1></a>
+            <nav role="navigation" class="w-nav-menu navigation-menu">
+                <p class="w-hidden-medium w-hidden-small w-hidden-tiny main-subheading">{{ site.subtitle }}</p>
+                <div class="w-hidden-medium w-hidden-small w-hidden-tiny divider"></div>
+                {{ _self.loop(pages) }}
+                <div class="divider"></div>
+                <div class="social-link-group">
+                    {% if theme_config.facebook != '' %}
+                    <a href="{{ theme_config.facebook }}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-03.svg', true) }}">
+                    </a>
+                    {% endif %}
+
+                    {% if theme_config.twitter != '' %}
+                    <a href="{{ theme_config.twitter }}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-18.svg', true) }}">
+                    </a>
+                    {% endif %}
+
+                    {% if theme_config.email != '' %}
+                    <a href="mailto:{{ theme_config.email }}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-25.svg', true) }}">
+                    </a>
+                    {% endif %}
+
+                    {% if theme_config.github != '' %}
+                    <a href="{{ theme_config.github}}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-33.svg', true) }}">
+                    </a>
+                    {% endif %}
+
+                    {% if theme_config.phone != '' %}
+                    <a href="tel:{{ theme_config.phone }}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-40.svg', true) }}">
+                    </a>
+                    {% endif %}
+
+                    {% if theme_config.linkedin != '' %}
+                    <a href="{{ theme_config.linkedin }}" class="w-inline-block social-icon-link">
+                        <img src="{{ url('theme://images/social-09_1.svg', true) }}">
+                    </a>
+                    {% endif %}
+                </div>
+            </nav>
+            <div class="w-nav-button menu-button">
+                <div class="w-icon-nav-menu"></div>
+            </div>
+        </div>
+    </div>
+</div>

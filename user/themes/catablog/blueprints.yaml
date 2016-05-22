@@ -1,0 +1,46 @@
+name: Catablog
+description: "Theme for Cata's blog."
+version: 1.0.0
+icon: code
+author:
+  name: Hung Tran
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    facebook:
+        type: text
+        label: Facebook
+        validate:
+          type: text
+
+    twitter:
+      type: text
+      label: Twitter
+      validate:
+        type: text
+
+    email:
+        type: text
+        label: Email
+        validate:
+          type: email
+
+    github:
+        type: text
+        label: Github
+        validate:
+          type: text
+
+    phone:
+        type: text
+        label: Phone
+        validate:
+          type: text
+
+    linkedin:
+        type: text
+        label: Linkedin
+        validate:
+          type: text

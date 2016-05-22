@@ -1,0 +1,15 @@
+enabled: true
+from: user@domain.com
+from_name: 'Your Name'
+to: user@domain.com
+to_name: 'Your Name'
+mailer:
+  engine: mail
+  smtp:
+    server: localhost
+    port: 25
+    encryption: none
+  sendmail:
+    bin: /usr/sbin/sendmail
+content_type: text/html
+debug: false

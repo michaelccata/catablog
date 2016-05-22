@@ -1,0 +1,11 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'partials/head.html.twig' %}
+    </head>
+    <body>
+        {% include 'partials/sidebar.html.twig' %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

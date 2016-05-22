@@ -1,0 +1,36 @@
+{% embed 'partials/base.html.twig' %}
+
+    {% set collection = page.collection() %}
+
+    {% block content %}
+    <div class="content">
+        <div class="w-dyn-list blog-list">
+            {% if collection|length > 0 %}
+            <div class="w-dyn-items">
+                {% for child in collection %}
+                <div class="w-dyn-item">
+                    <div class="post-wrapper">
+                        <a class="w-inline-block blog-title-link"><h1 class="blog-title">{{ child.title }}</h1></a>
+                        <div class="post-info-wrapper">
+                            <div class="post-info">{{ child.modified|date("Y-m-d") }}</div>
+                        </div>
+                        <p class="post-summary">{{ child.content|truncate(550) }}</p>
+                        <a  href="{{ child.url }}" class="w-button button-round">Continue reading →</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="w-dyn-empty">
+                <p>No items found.</p>
+            </div>
+            {% endif %}
+
+            {% if query is empty and config.plugins.pagination.enabled and collection.params.pagination %}
+				{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+			{% endif %}
+    </div>
+    <div class="body-wrapper"></div>
+    {% endblock %}
+
+{% endembed %}
